@@ -138,14 +138,17 @@ export default function Home() {
         <Box>
             <Menu />
             <Box
-                sx={{padding:'20px'}}
+                sx={{padding:'20px', width:'100%', display:'flex', alignItems:'center', flexDirection:'column', boxSizing:'border-box'}}
             >   
-                <Typography fontSize={"24px"}>Hola {getUserData?.nombre}!</Typography>
-                <Box sx={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
-                    <Typography fontSize={"24px"}>Mi heladera</Typography>
-                    <Button variant="contained" startIcon={<AddIcon />} onClick={() => navigate('/buscar')}>Producto</Button>
+                <Box sx={{width:{xs:'100%', md:'70%'}}}>
+                    <Typography fontSize={"24px"}>Hola {getUserData?.nombre}!</Typography>
+                    <Box sx={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+                        <Typography fontSize={"24px"}>Mi heladera</Typography>
+                        <Button variant="contained" startIcon={<AddIcon />} onClick={() => navigate('/buscar')}>Producto</Button>
+                    </Box>
+                    <ProductosLista productos={getUserData?.productos} onProductSelect={selectProduct} selects={getProductsSelect}/>
+
                 </Box>
-                <ProductosLista productos={getUserData?.productos} onProductSelect={selectProduct} selects={getProductsSelect}/>
             </Box>
             <Dialog
                 open={isDialogDeleteProductOpen}
