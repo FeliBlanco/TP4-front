@@ -2,10 +2,7 @@ import { Box, Button, Card, FormControl, Grid2, Input, InputLabel, MenuItem, Mod
 import Menu from "../../components/Menu";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import 'dayjs/locale/es';
 import { useNavigate } from "react-router-dom";
 import useUser from "../../hooks/user";
 
@@ -66,7 +63,6 @@ export default function Buscador() {
     }
 
     return (
-        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="es">
             <Box>
                 <Menu />
                 <Box sx={{padding:'20px'}}>
@@ -101,7 +97,6 @@ export default function Buscador() {
                     </Box>
                 </Modal>
             </Box>
-        </LocalizationProvider>
     )
 }
 

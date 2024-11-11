@@ -7,6 +7,7 @@ import Registro from "./Registro";
 import IsLogged from "../../IsLogged";
 import IsUnlogged from "../../IsUnlogged";
 import useUser from "../hooks/user";
+import Receta from "./Receta";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
     {
         path: '/crear-producto',
         element: <IsLogged><CrearProducto /></IsLogged>
+    },
+    {
+        path: '/receta/:id',
+        element: <IsLogged><Receta /></IsLogged>
     }
 ])
 

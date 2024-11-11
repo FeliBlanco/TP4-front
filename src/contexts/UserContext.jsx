@@ -23,6 +23,7 @@ export default function UserContextProvider({children}) {
                     try {
                         const user_data_decoded = JSON.parse(cache_user_data);
                         setUserData(user_data_decoded)
+                        setLoged(true)
                     }
                     catch(err) {}
                 }
